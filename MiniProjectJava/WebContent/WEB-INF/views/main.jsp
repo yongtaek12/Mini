@@ -63,7 +63,7 @@
 						</tbody>
 					</table>
 					
-					<a href="board_main.html" class="btn btn-primary">더보기</a>
+					<a href="${root }board/main" class="btn btn-primary">더보기</a>
 				</div>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 						</tbody>
 					</table>
 					
-					<a href="board_main.html" class="btn btn-primary">더보기</a>
+					<a href="${root }board/main" class="btn btn-primary">더보기</a>
 				</div>
 			</div>
 		

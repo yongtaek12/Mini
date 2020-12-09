@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var ='root' value='${pageContext.request.contextPath }/'/> 
+<!-- 절대경로를 알아온다. -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,45 +20,8 @@
 	
 
 
-<!-- 상단 메뉴 부분 -->
-<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
-	<a class="navbar-brand" href="index.html">SoftCampus</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-	        data-target="#navMenu">
-		<span class="navbar-toggler-icon"></span>        
-	</button>
-	<div class="collapse navbar-collapse" id="navMenu">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a href="board_main.html" class="nav-link">자유게시판</a>
-			</li>
-			<li class="nav-item">
-				<a href="board_main.html" class="nav-link">유머게시판</a>
-			</li>
-			<li class="nav-item">
-				<a href="board_main.html" class="nav-link">정치게시판</a>
-			</li>
-			<li class="nav-item">
-				<a href="board_main.html" class="nav-link">스포츠게시판</a>
-			</li>
-		</ul>
-		
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-				<a href="login.html" class="nav-link">로그인</a>
-			</li>
-			<li class="nav-item">
-				<a href="join.html" class="nav-link">회원가입</a>
-			</li>
-			<li class="nav-item">
-				<a href="modify_user.html" class="nav-link">정보수정</a>
-			</li>
-			<li class="nav-item">
-				<a href="index.html" class="nav-link">로그아웃</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+<c:import url="/WEB-INF/views/include/top_menu.jsp"/>
+<!-- 상단메뉴불러오기 -->
 
 <div class="container" style="margin-top:100px">
 	<div class="row">
@@ -82,13 +47,13 @@
 					</div>
 					<div class="form-group">
 						<label for="board_file">첨부 이미지</label>
-						<img src="image/logo.png" width="100%"/>						
+						<img src="${root }image/logo.png" width="100%"/>						
 					</div>
 					<div class="form-group">
 						<div class="text-right">
-							<a href="board_main.html" class="btn btn-primary">목록보기</a>
-							<a href="board_modify.html" class="btn btn-info">수정하기</a>
-							<a href="board_main.html" class="btn btn-danger">삭제하기</a>
+							<a href="${root }board/main" class="btn btn-primary">목록보기</a>
+							<a href="${root }board/modify" class="btn btn-info">수정하기</a>
+							<a href="${root }board/delete" class="btn btn-danger">삭제하기</a>
 						</div>
 					</div>
 				</div>
@@ -99,13 +64,8 @@
 </div>
 
 
-<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
-	<div class="container">
-		<p>http://www.softcampus.co.kr</p>
-		<p>게시판 예제</p>
-		<p>사업자번호 : 000-111-222</p>
-	</div>
-</div>
+<c:import url="/WEB-INF/views/include/bottom_info.jsp"/>
+
 
 </body>
 </html>
